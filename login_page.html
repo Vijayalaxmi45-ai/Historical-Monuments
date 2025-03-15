@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <title>Login</title>
+    <style>
+        body {
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .main-div {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: gold;
+            padding: 20px;
+        }
+
+        .main-div::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('img/history.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            filter: blur(3px); 
+            z-index: -1; 
+        }
+
+        .main-container {
+            background-color: black; 
+            padding: 30px;
+            border-radius: 10px;
+            width: 100%;
+            max-width: 500px;
+            text-align: center;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        h3 {
+            color: #FFD700;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+
+        .form-control {
+            margin-bottom: 15px;
+            padding: 12px;
+            font-size: 1rem;
+        }
+
+        .btn-login {
+            background-color: #28a745;
+            color: white;
+            padding: 12px;
+            border: none;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font-weight: bold;
+            width: 48%;
+            border-radius: 5px;
+            margin-right: 4%;
+        }
+
+        .btn-login:hover {
+            background-color: #218838;
+        }
+
+        .btn-reset {
+            background-color: #dc3545;
+            color: white;
+            padding: 12px;
+            border: none;
+            font-size: 16px;
+            cursor: pointer;
+            font-weight: bold;
+            width: 48%;
+            border-radius: 5px;
+        }
+
+        .btn-reset:hover {
+            background-color: #c82333;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .main-container {
+                max-width: 80%;
+                padding: 20px;
+            }
+
+            h3 {
+                font-size: 1.6rem;
+            }
+
+            .form-control {
+                padding: 10px;
+            }
+
+            .btn-login, .btn-reset {
+                font-size: 1.2rem;
+                width: 100%;
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .main-container {
+                max-width: 90%;
+                padding: 15px;
+            }
+
+            h3 {
+                font-size: 1.4rem;
+            }
+
+            .form-control {
+                padding: 8px;
+            }
+
+            .btn-login, .btn-reset {
+                font-size: 1.1rem;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <form action="login_conn.php" method="post">
+        <div class="main-div">
+            <div class="main-container">
+                <h3>Login</h3>
+                <input type="email" placeholder="Enter Email" class="form-control" name="UserEmail" required><br>
+                <input type="password" placeholder="Enter Password" name="UserPass" class="form-control" required><br>
+                <button type="submit" class="btn-login">Login</button>
+                <button type="reset" class="btn-reset">Cancel</button>
+            </div>
+        </div>
+    </form>
+    <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

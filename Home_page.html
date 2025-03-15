@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <title>Home Page</title>
+    <style>
+        body {
+            background-image: url('img/History_2.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            filter: brightness(70%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        nav {
+            padding: 1rem;
+            background-color: black;
+            margin: 20px 5%;
+            border-radius: 8px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        nav ul li {
+            display: inline-block;
+        }
+
+        nav ul li a {
+            color: #FFD700;
+            text-decoration: none;
+            padding: 12px 18px;
+            cursor: pointer;
+            font-weight: bold;
+            display: block;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        nav ul li a:hover {
+            background-color: gold;
+            color: black;
+        }
+
+        main {
+            text-align: center;
+            margin-top: 10%;
+            color: #F0F8FF; /* Alice blue */
+        }
+
+        main h1 {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            color: #FFD700;
+        }
+
+        main p {
+            font-size: 1.8rem;
+            color: #FFD700;
+        }
+
+        footer {
+            background-color: #222;
+            color: white;
+            padding: 15px;
+            margin-top: 16%;
+            text-align: center;
+            border-radius: 5px 5px 0 0;
+        }
+
+        footer p {
+            margin: 8px 0;
+        }
+
+        footer a {
+            color: #87CEEB;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+            color: #FFD700;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 1024px) {
+            nav {
+                margin-left: 5%;
+                margin-right: 5%;
+            }
+
+            main h1 {
+                font-size: 3.5rem;
+            }
+
+            main p {
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                margin: 10px;
+            }
+
+            nav ul {
+                display: block;
+                text-align: center;
+            }
+
+            nav ul li {
+                margin-bottom: 10px;
+            }
+
+            main h1 {
+                font-size: 3rem;
+            }
+
+            main p {
+                font-size: 1.4rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            nav {
+                margin-left: 0;
+                margin-right: 0;
+            }
+
+            nav ul {
+                padding-left: 0;
+                text-align: center;
+            }
+
+            main h1 {
+                font-size: 2.5rem;
+            }
+
+            main p {
+                font-size: 1.2rem;
+            }
+
+            footer {
+                margin-top: 10%;
+            }
+        }
+
+        @media (max-width: 380px) {
+            main h1 {
+                font-size: 2rem;
+            }
+
+            main p {
+                font-size: 1rem;
+            }
+
+            footer p {
+                font-size: 0.9rem;
+            }
+
+            nav ul li a {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="Home_page.html">Home</a></li>
+            <li><a href="registration.html">Registration</a></li>
+            <li><a href="login_page.html">Login</a></li>
+            <li><a href="About.html">About</a></li>
+            <li><a href="Contact_us.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <div>
+            <h1>Welcome to Historical Monuments</h1>
+            <p>Discover the most beautiful and ancient Monuments around India.</p>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Historical Monuments All Rights Reserved.</p>
+        <p>Contact: <a href="Contact_us.html">vijayalaxmikamble99@gmail.com</a></p>
+    </footer>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

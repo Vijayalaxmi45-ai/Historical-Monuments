@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Page</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <style> 
+        body {
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .main-div {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: gold;
+        }
+
+        .main-div::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('img/history.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            filter: blur(3px); 
+            z-index: -1; 
+        }
+
+        .main-container {
+            background-color: black; 
+            padding: 30px;
+            border-radius: 10px;
+            width: 100%;
+            max-width: 800px;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+            margin: 20px;
+        }
+
+        .Profile-div h3 {
+            font-size: 2rem;
+            color: gold; 
+            margin-bottom: 10px;
+        }
+
+        .Profile-div p {
+            font-size: 1.2rem;
+            color: gold; 
+        }
+
+        .about-me, .Details {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: rgb(211, 211, 211);
+            border-radius: 8px;
+            box-shadow: 0px 1px 1px black;
+        }
+
+        .about-me h3, .Details h3 {
+            font-size: 2rem;
+            color: maroon; 
+            margin-bottom: 20px;
+        }
+
+        .about-me p, .Details p {
+            font-size: 1.1rem;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .Details ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .Details li {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .Profile-div h3, .about-me h3, .Details h3 {
+            font-size: 1.6rem;
+        }
+
+        .about-me, .Details {
+            margin-top: 20px;
+        }
+
+        /* Responsive CSS */
+        @media (max-width: 768px) {
+            .main-container {
+                padding: 20px;
+                max-width: 90%;
+            }
+
+            .Profile-div h3 {
+                font-size: 1.5rem;
+            }
+
+            .about-me h3, .Details h3 {
+                font-size: 1.4rem;
+            }
+
+            .about-me p, .Details p {
+                font-size: 1rem;
+            }
+
+            .Details li {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .main-container {
+                padding: 15px;
+                max-width: 95%;
+            }
+
+            .Profile-div h3 {
+                font-size: 1.2rem;
+            }
+
+            .about-me h3, .Details h3 {
+                font-size: 1.2rem;
+            }
+
+            .about-me p, .Details p {
+                font-size: 0.9rem;
+            }
+
+            .Details li {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div class="main-div">
+            <div class="main-container">
+                <div class="Profile-div text-center">
+                    <h3>Historical Monuments</h3>
+                </div>
+                <div class="about-me">
+                    <h3>About Us</h3>
+                    <p>We are dedicated to exploring and preserving India’s rich architectural heritage. Our project focuses on the historical monuments that reflect India’s cultural evolution. We aim to educate and inspire through detailed information on each monument’s significance. From ancient temples to Mughal forts, we highlight India’s diverse history. Join us in celebrating these timeless landmarks that define the nation’s identity.</p>
+                </div>
+                <div class="Details">
+                    <h3>Developed by</h3>
+                    <ul>
+                        <li>Name:</li>
+                        <p>Vijayalaxmi Kamble</p>
+
+                        <li>Age:</li>
+                        <p>19</p>
+
+                        <li>Location:</li>
+                        <p>Mitra Nagar, Solapur</p>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
