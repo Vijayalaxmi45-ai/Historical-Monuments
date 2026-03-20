@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Profile Page</title>
+  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="node_modules/bootstrap-icons/font/bootstrap-icons.css">
+  <style>
+    body {
+      background-image: url('img/history.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      font-family: 'Poppins', sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+     /*for background img transperent*/
+    body::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-color: rgba(0, 0, 0, 0.6);
+      z-index: 0;
+    }
+    .profile-container {
+      position: relative;
+      z-index: 1;
+      background: rgba(0, 0, 0, 0.7);
+      padding: 20px 20px;
+      border-radius: 15px;
+      margin-top: 30px;
+      max-width: 700px;
+      width: 90%;
+      color: #fff;
+      box-shadow: 0 0 25px rgba(255, 215, 0, 0.2);
+    }
+    h1 {
+      text-align: center;
+      color: #FFD700;
+      margin-bottom: 30px;
+      font-size: 2rem;
+      letter-spacing: 1px;
+    }
+    .section {
+      margin-bottom: 25px;
+      padding: 25px;
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+    .section h3 {
+      color: #FFD700;
+      font-size: 1.4rem;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .section p {
+      font-size: 1rem;
+      color: #e0e0e0;
+      line-height: 1.6;
+    }
+    .section ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    .section ul li {
+      font-size: 1.2rem;
+      color: #e0e0e0;
+    }
+    .section i {
+      color: #FFD700;
+    }
+    .section ul li i {
+      color: #28a745;
+      margin: 10px;
+    }
+    /*
+    @media (max-width: 768px) {
+      .profile-container {
+        padding: 25px;
+        max-width: 90%;
+      }
+
+      h1 {
+        font-size: 2rem;
+      }
+
+      .section h3 {
+        font-size: 1.5rem;
+      }
+
+      .section p, .section li {
+        font-size: 1rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .profile-container {
+        padding: 20px;
+        max-width: 95%;
+      }
+
+      h1 {
+        font-size: 1.8rem;
+      }
+
+      .section h3 {
+        font-size: 1.4rem;
+      }
+
+      .section p, .section li {
+        font-size: 0.9rem;
+      }
+    }*/
+  </style>
+</head>
+<body>
+  <div class="profile-container">
+    <h1><i class="bi bi-buildings-fill"></i> Historical Monuments</h1>
+
+    <!-- About Us Section -->
+    <div class="section about-us">
+      <h3><i class="bi bi-info-circle-fill"></i> About Us</h3>
+      <p>We are dedicated to exploring and preserving India’s rich architectural heritage. Our project focuses on the historical monuments that reflect India’s cultural evolution. From ancient temples to Mughal forts, we aim to educate and inspire through detailed information, celebrating the timeless landmarks that define the nation’s identity.</p>
+    </div>
+
+    <!-- Developer Info Section -->
+    <div class="section developer-info">
+      <h3><i class="bi bi-person-lines-fill"></i> Developed By</h3>
+      <ul>
+        <li><i class="bi bi-person-circle"></i><strong>Name:</strong> Vijayalaxmi Kamble</li>
+        <li><i class="bi bi-calendar-date"></i><strong>Age:</strong> 19</li>
+        <li><i class="bi bi-geo-alt-fill"></i><strong>Location:</strong> Mitra Nagar, Solapur</li>
+      </ul>
+    </div>
+  </div>
+
+  <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
