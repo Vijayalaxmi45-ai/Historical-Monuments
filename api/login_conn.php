@@ -6,9 +6,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (empty($UserEmail) || empty($UserPass)) {
         echo "Please fill in all fields.";
     } else {
-        $conn = new mysqli('localhost', 'root', 'root', 'fort_project');
+        try {
+            mysqli_report(MYSQLI_REPORT_STRICT | MYSQLI_REPORT_ALL);
+            $conn = new mysqli('localhost', 'root', 'root', 'fort_project');
+        } catch (Exception $e) {
+            echo "<h3>Database Connection Error</h3>";
+            echo "<p>Your project is live, but your local XAMPP database is not accessible from Vercel.</p>";
+            echo "<p>Please click 'Explore Directly' to see the monuments without logging in.</p>";
+            echo "<a href='../FortInfo.html' style='display:inline-block;padding:10px 20px;background:#FFD700;color:#000;text-decoration:none;border-radius:5px;font-weight:bold;'>Explore Directly Now</a>";
+            exit();
+        }
 
-        if ($conn->connect_error) {
+        if (false) { // Never reached but keeping structure
             die('Connection Failed....Try Again!!' . $conn->connect_error);
         } else {
             // Query to fetch the user based on email
