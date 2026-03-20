@@ -1,0 +1,7 @@
+{
+  "name": "historical-monuments-of-india",
+  "version": 2,
+  "rewrites": [
+    { "source": "/", "destination": "/Home_page.html" }
+  ]
+}
