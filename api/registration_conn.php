@@ -4,15 +4,14 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $Username = $_POST['Username'];
-    $UserMob = $_POST['UserMob'];
-    $UserEmail = $_POST['UserEmail'];
-    $UserAddress = $_POST['UserAddress'];
-    $UserPassword = $_POST['UserPassword'];
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // Only expect the fields currently present in the form
+    $Username = isset($_POST['Username']) ? trim($_POST['Username']) : '';
+    $UserEmail = isset($_POST['UserEmail']) ? trim($_POST['UserEmail']) : '';
+    $UserPassword = isset($_POST['UserPassword']) ? $_POST['UserPassword'] : '';
 
-    if (empty($Username) || empty($UserMob) || empty($UserEmail) || empty($UserAddress) || empty($UserPassword)) {
-        echo "Please fill in all fields.";
+    if (empty($Username) || empty($UserEmail) || empty($UserPassword)) {
+        echo "Please fill in all required fields (Name, Email, Password).";
     } else {
         $hashedPassword = password_hash($UserPassword, PASSWORD_DEFAULT);
 
@@ -29,24 +28,23 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             exit();
         }
 
-        if (false) { // Never reached but keeping structure
-            $stmt = $conn->prepare("INSERT INTO registration (Username, UserMob, UserEmail, UserAddress, UserPassword) VALUES (?, ?, ?, ?, ?)");
-
-            if ($stmt === false) {
-                die('MySQL prepare error: ' . $conn->error);
-            }
-
-            $stmt->bind_param("sssss", $Username, $UserMob, $UserEmail, $UserAddress, $hashedPassword);
-
-            if ($stmt->execute()) {
-                $stmt->close();
-                $conn->close();
-                header("Location: login_page.html");
-                exit();
-            } else {
-                echo "Error inserting data: " . $stmt->error;
-            }
+        // DB insertion disabled by default (safer for local testing without DB).
+        // If you want to enable insertion, remove the following comment and adjust DB credentials and table.
+        /*
+        $stmt = $conn->prepare("INSERT INTO registration (Username, UserEmail, UserPassword) VALUES (?, ?, ?)");
+        if ($stmt === false) {
+            die('MySQL prepare error: ' . $conn->error);
         }
+        $stmt->bind_param("sss", $Username, $UserEmail, $hashedPassword);
+        if ($stmt->execute()) {
+            $stmt->close();
+            $conn->close();
+            header("Location: ../login_page.html");
+            exit();
+        } else {
+            echo "Error inserting data: " . $stmt->error;
+        }
+        */
     }
 }
 ob_end_flush();
