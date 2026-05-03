@@ -129,23 +129,16 @@
 <body>
   <div class="main-div">
     <h1><i class="bi bi-person-plus-fill"></i> Create Account</h1>
-    <form action="registration_conn.php" method="post" id="registration-form">
+    <form action="api/registration_conn.php" method="post" id="registration-form">
       <div class="form-icon">
         <i class="bi bi-person"></i>
         <input type="text" placeholder="Enter Name" class="form-control" name="Username" required>
       </div>
       <div class="form-icon">
-        <i class="bi bi-phone"></i>
-        <input type="number" placeholder="Enter Mobile No" class="form-control" name="UserMob" required>
-      </div>
-      <div class="form-icon">
         <i class="bi bi-envelope"></i>
         <input type="email" placeholder="Enter Email" class="form-control" name="UserEmail" required>
       </div>
-      <div class="form-icon">
-        <i class="bi bi-geo-alt"></i>
-        <input type="text" placeholder="Enter Address" class="form-control" name="UserAddress" required>
-  </div>
+      
       <div class="form-icon">
         <i class="bi bi-lock"></i>
         <input type="password" placeholder="Enter Password" class="form-control" id="password" name="UserPassword" required>
