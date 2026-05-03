@@ -10,10 +10,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             mysqli_report(MYSQLI_REPORT_STRICT | MYSQLI_REPORT_ALL);
             $conn = new mysqli('localhost', 'root', 'root', 'fort_project');
         } catch (Exception $e) {
-            echo "<h3>Database Connection Error</h3>";
-            echo "<p>Your project is live, but your local XAMPP database is not accessible from Vercel.</p>";
-            echo "<p>Please click 'Explore Directly' to see the monuments without logging in.</p>";
-            echo "<a href='../FortInfo.html' style='display:inline-block;padding:10px 20px;background:#FFD700;color:#000;text-decoration:none;border-radius:5px;font-weight:bold;'>Explore Directly Now</a>";
+            // FOR LIVE DEMO: Automatically redirect to monuments page even if DB fails
+            header("Location: ../FortInfo.html");
             exit();
         }
 

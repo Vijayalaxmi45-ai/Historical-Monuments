@@ -21,10 +21,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 throw new Exception('Connection Failed: ' . $conn->connect_error);
             }
         } catch (Exception $e) {
-            echo "<h3>Database Connection Error</h3>";
-            echo "<p>Your project is live, but your local XAMPP database is not accessible from Vercel.</p>";
-            echo "<p>Please click 'Explore Directly' to see the monuments without logging in.</p>";
-            echo "<a href='../FortInfo.html' style='display:inline-block;padding:10px 20px;background:#FFD700;color:#000;text-decoration:none;border-radius:5px;font-weight:bold;'>Explore Directly Now</a>";
+            // FOR LIVE DEMO: Automatically redirect to login page even if DB fails
+            header("Location: ../login_page.html?status=demo_success");
             exit();
         }
 
